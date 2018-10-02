@@ -17,8 +17,16 @@
 
 <p>
   <strong>Course:</strong>
-  <%= @section.course %>
+  <%= @section.course.name %>
 </p>
+
+<ul>
+	<% @section.students.each do |student| %>
+		<li><%= student.first_Name%></li>
+		<li><%= student.last_Name%></li>
+	<%end %>
+</ul>
+
 
 <%= link_to 'Edit', edit_section_path(@section) %> |
 <%= link_to 'Back', sections_path %>
